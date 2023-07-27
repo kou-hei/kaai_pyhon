@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+    <title>ログイン画面</title>
+  </head>
+  <body class="haikei">
+    {% if error != null %}
+    {% endif %} {% if msg != null %}
+    {% endif %}
+    <div class="login-page">
+      <div class="form">
+        <p style="color: blue">{{msg}}</p>
+        <p style="color: red">{{error}}</p>
+        <form action="{{url_for('login')}}" method="post" class="login-form">
+          <input type="text" name="mail" placeholder="mail" value="{{data.mail if data
+            is defined else ''}}"/required>
+          <input type="password" name="password" placeholder="password" value="{{data.password
+            if data is defined else ''}}" /required>
+          <button type="submit">login</button>
+          <p class="message"><a href="{{url_for('register_form')}}">Create an account</a></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

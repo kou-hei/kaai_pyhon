@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+    <link
+      rel="icon"
+      href="{{url_for('static', filename='favicon/favicon.ico')}}"
+    />
+    <title>本の検索</title>
+  </head>
+  <body>
+    <div class="box1">
+      <h3>検索したい本のタイトルを入力してください</h3>
+      <form action="{{url_for('book_search')}}" method="post">
+        タイトル:<input type="text" name="title" value="{{title}}"/required class="f1"><br />
+        <button class="btn" type="submit" >検索</button>
+        <button class="btn" type="button" onclick="history.back()">戻る</button>
+      </form>
+    </div>
+  </body>
+</html>

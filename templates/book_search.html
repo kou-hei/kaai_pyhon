@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+    <link
+      rel="icon"
+      href="{{url_for('static', filename='favicon/favicon.ico')}}"
+    />
+    <title>検索された本一覧</title>
+  </head>
+  <body>
+    <div class="box1">
+      <h1>検索された本の一覧</h1>
+      <table align="center" border="1">
+        <thead>
+          <tr class="li2">
+            <th>タイトル</th>
+            <th>著者</th>
+            <th>出版社</th>
+            <th>出版年</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for book in books %}
+          <tr class="li2">
+            <td style="text-align: center;">{{ book[0] }}</td>
+            <td style="text-align: center;">{{ book[1] }}</td>
+            <td style="text-align: center;">{{ book[2] }}</td>
+            <td style="text-align: center;">{{ book[3] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <li class="re"><a href="{{url_for('mypage')}}">TOPへ</a></li>
+    </div>
+  </body>
+</html>

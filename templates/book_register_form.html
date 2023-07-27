@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+    <title>本の登録</title>
+  </head>
+  <body>
+    <div class="box1">
+      <h3>本の登録画面</h3>
+      {% if error != null %}
+      <p style="color: red">{{error}}</p>
+      {% endif %}
+      <form  action="{{url_for('book_register')}}" method="post">
+        タイトル：<input type="text" name="title" value="{{title}}" /required class="f1"><br />
+        著者：<input type="text" name="author" value="{{author}}" /required class="f1"><br />
+        出版社：<input type="text" name="publisher" value="{{publisher}}"
+        /required class="f1"><br />
+        出版日：<input type="text" name="publisher_year" value="{{publisher_year}}"
+        /required class="f1"><br />
+        <button class="btn" type="submit">登録</button>
+        <button class="btn" type="button" onclick="history.back()">戻る</button>
+      </form>
+    </div>
+  </body>
+</html>
